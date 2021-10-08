@@ -19,7 +19,7 @@ public class FileDemo {
 
     public static void main(String[] args) throws IOException {
 
-        File file = new File("a.txt");
+        File file = new File("b.txt");
 
         boolean newFile = file.createNewFile();
 
