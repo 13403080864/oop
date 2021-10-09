@@ -18,11 +18,14 @@ import java.io.IOException;
 public class FileDemo {
 
     public static void main(String[] args) throws IOException {
-
+        //创建文件
         File file = new File("b.txt");
 
         boolean newFile = file.createNewFile();
-
+        //创建文件夹mkdir（创建一个文件夹） mkdirs(创建多个文件夹)
+        File f = new File("cc\\dd");
+        boolean mkdir = f.mkdirs();
         System.out.println(newFile);
+        System.out.println(mkdir);
     }
 }

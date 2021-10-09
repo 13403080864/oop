@@ -58,7 +58,7 @@ public class ReaderDemo {
              *  String(char[] value) 把字符数组转换为字符串
              *  String(char[] value，int offset，count) 把字符数组一部分转换为字符串，offset开始索引，count个数
              */
-
+            System.out.println(new String(ch));
             System.out.println(new String(ch,0,len)); //你好hello123
             //System.out.println(new String(ch,0,len)); 这个也可以
             System.out.println(new String(ch,0,len-1));  //你好hello12

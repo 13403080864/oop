@@ -7,6 +7,7 @@ import java.io.IOException;
 /**
  * @author wq
  * @since 2021-10-08 16:25
+ * 输出流
  * flush() 与 close() 区别
  * flush() 把内存缓冲区的数据，刷新到文件中 流可以继续使用
  * close() 使用后.流被关闭了，不能使用
