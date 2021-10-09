@@ -12,12 +12,8 @@ public class CharToString {
         String ss3 = Character.toString(c);
         System.out.println(ss3 + 1);
 
-        //字符串转换为字符
         String ss = "str";
-        char[] chars = ss.toCharArray();
-        for (int i=0;i<ss.length();i++){
-            System.out.print(chars[i] +"\t");
-        }
+        System.out.println(ss + 1);
 
         //字符数组转换为字符串
         char[] ch = {'a','b','c','d'};
