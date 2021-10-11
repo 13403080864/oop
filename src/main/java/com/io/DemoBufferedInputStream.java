@@ -29,7 +29,6 @@ public class DemoBufferedInputStream {
 
         //2，创建 BufferedInputStream对象，构造方法中传递FileInputStream对象，提高FileInputStream对象效率
         BufferedInputStream bis = new BufferedInputStream(fis);
-
         //3，调用BufferedInputStream的方法read,读取文件
             //读取一个字节
 //        int len = 0;
