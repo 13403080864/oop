@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 以上是mapper的约束-->
+<mapper namespace="com.mybatis.dao.IUserDao">
+
+    <!-- 查询所有-->
+    <select id="findAll" resultType="com.mybatis.domain.User">
+        select * from user
+    </select>
+
+    <!-- 保存用户-->
+    <insert id="saveUser" parameterType="com.mybatis.domain.User">
+       insert into user(username,birthday,sex,address) values(#{username},#{birthday},#{sex},#{address})
+    </insert>
+
+    <!-- 更新用户-->
+    <update id="updateUser" parameterType="com.mybatis.domain.User">
+        update user set username=#{username},birthday=#{birthday},sex=#{sex},address=#{address} where id = #{id}
+    </update>
+</mapper>
