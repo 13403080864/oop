@@ -1,5 +1,6 @@
 package com.mybatis.dao;
 
+import com.mybatis.domain.QueryVo;
 import com.mybatis.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -150,5 +151,26 @@ public class MybatisTest2 {
         System.out.println(count);
     }
 
+
+    @Test
+    //(实体类user包装作为查询的条件） 实现模糊查询
+    public void testFindQueryVo(){
+
+        QueryVo vo = new QueryVo();
+
+        User user = new User();
+
+        user.setUsername("%王%");
+
+        vo.setUser(user);
+
+        List<User> users = userDao.findQueryVo(vo);
+
+        for(User u : users){
+
+            System.out.println(user);
+        }
+
+    }
 
 }

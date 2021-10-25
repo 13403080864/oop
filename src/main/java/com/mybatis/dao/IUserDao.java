@@ -1,5 +1,6 @@
 package com.mybatis.dao;
 
+import com.mybatis.domain.QueryVo;
 import com.mybatis.domain.User;
 
 import java.util.List;
@@ -39,4 +40,8 @@ public interface IUserDao {
     //查询总条数
 
     int countUser();
+
+    //用QueryBVo实现模糊查询 ,把对象作为查询条件再次包装 （OGNL表达式）
+
+    List<User> findQueryVo(QueryVo vo);
 }

@@ -36,9 +36,15 @@
         select * from user where username like #{name}
     </select>
 
-    <!-- 根据姓名模糊查询 -->
+    <!-- 查询用户总记录 -->
     <select id="countUser" resultType="integer">
         select count(*) from user
+    </select>
+
+
+    <!-- 用OGNL表达式（实体类user包装作为查询的条件） 实现模糊查询-->
+    <select id="findQueryVo" parameterType="com.mybatis.domain.QueryVo" resultType="com.mybatis.domain.User">
+        select * from user where username like #{user.username}
     </select>
 
 </mapper>
