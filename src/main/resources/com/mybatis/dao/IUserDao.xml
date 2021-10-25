@@ -20,4 +20,25 @@
     <update id="updateUser" parameterType="com.mybatis.domain.User">
         update user set username=#{username},birthday=#{birthday},sex=#{sex},address=#{address} where id = #{id}
     </update>
+
+    <!-- 删除用户（根据id）-->
+    <delete id="deleteUser" parameterType="integer">
+        delete from user where id = #{uid}
+    </delete>
+
+    <!-- 查询用户（根据id）-->
+    <select id="findById" parameterType="integer" resultType="com.mybatis.domain.User">
+        select * from user where id = #{uid}
+    </select>
+
+    <!-- 根据姓名模糊查询 -->
+    <select id="findByName" parameterType="string" resultType="com.mybatis.domain.User">
+        select * from user where username like #{name}
+    </select>
+
+    <!-- 根据姓名模糊查询 -->
+    <select id="countUser" resultType="integer">
+        select count(*) from user
+    </select>
+
 </mapper>

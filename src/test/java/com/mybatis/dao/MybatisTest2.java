@@ -103,14 +103,52 @@ public class MybatisTest2 {
 
         User user = new User();
 
-        user.setId(58);
-        user.setUsername("小幸运");
+        user.setId(59);
+        user.setUsername("Luck");
         user.setAddress("浙江省杭州市滨江区");
         user.setSex("女");
         user.setBirthday(dat);
 
 
-        //5,执行方法（查询保存方法）
+        //5,执行方法（更新方法）
         userDao.updateUser(user);
     }
+
+    @Test
+
+    public void deleteUser(){
+
+        userDao.deleteUser(59);
+    }
+
+    @Test
+    //根据id查询用户信息
+    public void findById(){
+
+        User user = userDao.findById(41);
+        System.out.println(user);
+    }
+
+    @Test
+    //根据姓名模糊查询
+    public void testFindByName(){
+
+        List<User> users = userDao.findByName("%王%");
+
+        for(User user : users){
+
+            System.out.println(user);
+        }
+
+    }
+
+    @Test
+    //查询用户记录总数
+    public void testCountUser(){
+
+        int count = userDao.countUser();
+        System.out.println(count);
+    }
+
+
 }

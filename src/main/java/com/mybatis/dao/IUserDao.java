@@ -23,4 +23,20 @@ public interface IUserDao {
     //更新用户
 
     void updateUser(User user);
+
+    //删除用户
+
+    void deleteUser(Integer userId);
+
+    //根据用户ID查询
+
+    User findById(Integer id);
+
+    //模糊查询
+
+    List<User> findByName(String name);
+
+    //查询总条数
+
+    int countUser();
 }
