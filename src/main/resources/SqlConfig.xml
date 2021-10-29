@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 上面的是Mybatis配置文件的约束-->
+
+<!-- Mybatis的主配置文件-->
+<configuration>
+    <!-- 配置环境-->
+    <environments default="mysql">
+        <!-- 配置mysql环境-->
+        <environment id="mysql">
+            <!-- 配置事务的类型（JDBC）-->
+            <transactionManager type="JDBC"></transactionManager>
+            <!-- 配置数据源(连接池)-->
+            <dataSource type="POOLED">
+                <!-- 配置连接数据库的4个基本信息-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://192.168.9.244:3306/wqtest"/>
+                <property name="username" value="root"/>
+                <property name="password" value="hellowin"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 配置映射文件位置，映射文件是指每个dao独立的配置文件,就是映射文件的路径-->
+    <!-- 配置文件形式-->
+<!--    <mappers>-->
+<!--        <mapper resource="com/mybatis/dao/IUserDao.xml"></mapper>-->
+<!--    </mappers>-->
+    <!-- 注解形式，用class属性指定被注解的dao包全限定类名-->
+    <mappers>
+        <mapper class="com.mybatis.dao.IUserDao"/>
+    </mappers>
+</configuration>

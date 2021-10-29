@@ -1,7 +1,6 @@
-package com.mybatis.dao;
+package com.mybatis2.dao;
 
-import com.mybatis.domain.QueryVo;
-import com.mybatis.domain.User;
+import com.mybatis2.domain.User;
 
 import java.util.List;
 
@@ -41,7 +40,4 @@ public interface IUserDao {
 
     int countUser();
 
-    //根据QueryVo 模糊查询（把类包装封起来，实体类user包装作为查询的条件 实现模糊查询）
-
-    List<User> findQueryVo(QueryVo vo);
 }

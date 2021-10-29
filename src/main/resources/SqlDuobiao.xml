@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- 以上是mybatis主配置文件约束 -->
+
+<!-- 配置mybatis 主配置文件-->
+<configuration>
+    <!-- 配置环境-->
+    <environments default="mysql">
+        <!-- 配置mysql环境-->
+        <environment id="mysql">
+            <!-- 配置事务-->
+            <transactionManager type="JDBC"></transactionManager>
+
+            <!-- 配置数据库（连接池）-->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <!--                <property name="url" value="jdbc:mysql://localhost:3306/wqtest?characterEncoding=UTF-8"/>-->
+
+                <property name="url" value="jdbc:mysql://192.168.9.244:3306/wqtest?characterEncoding=UTF-8"/>
+                <property name="username" value="root"/>
+                <!--                <property name="password" value="123456"/>-->
+
+                <property name="password" value="hellowin"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 配置映射文件的位置-->
+    <mappers>
+        <!-- mybatis_duobiao的配置映射文件的位置-->
+        <mapper resource="com/mybatisduobiao/dao/IAccount.xml"/>
+    </mappers>
+</configuration>
