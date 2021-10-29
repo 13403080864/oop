@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 以上是mapper的约束-->
+<mapper namespace="com.mybatisduobiao.dao.IAccountDao">
+
+    <!-- 定义account和user的resultMap -->
+    <resultMap id="accountUserMap" type="com.mybatisduobiao.domain.Account">
+        <id property="id" column="aid"></id>
+        <result property="uid" column="uid"></result>
+        <result property="money" column="money"></result>
+
+        <!-- 一对一的映射关系：配置user的内容-->
+        <association property="user" column="uid" javaType="com.mybatisduobiao.domain.User">
+            <result  column="id" property="id"/>
+            <result  column="username" property="username"/>
+            <result column="address" property="address" />
+            <result column="sex" property="sex" />
+            <result column="birthday" property="birthday" />
+        </association>
+    </resultMap>
+    <!-- 查询所有账户-->
+    <select id="findAll" resultMap="accountUserMap">
+    <!-- select * from account-->
+        <!-- SELECT u.*,a.id aid,a.uid,a.money FROM account a LEFT JOIN `user` u on a.UID = u.id-->
+        SELECT u.*,a.id aid,a.uid,a.money FROM account a,user u where a.uid = u.id
+ </select>
+
+    <!-- 查询所有账户 包含用户信息的姓名和地址-->
+    <select id="findAllAccount"  resultMap="accountUserMap">
+       SELECT u.username,u.address,a.id aid,a.uid,a.money FROM account a,user u where a.uid = u.id
+    </select>
+
+ </mapper>
