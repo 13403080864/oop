@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 以上是mapper的约束-->
+<mapper namespace="com.mybatisduoToduo.dao.IUserDao">
+
+        <!-- 定义User 的 UserMap-->
+        <resultMap id="UserMap" type="com.mybatisduoToduo.domain.User">
+            <id property="id"  column="id"></id>
+            <result property="username" column="username"/>
+            <result column="address" property="address" />
+            <result column="sex" property="sex" />
+            <result column="birthday" property="birthday" />
+
+            <!-- 配置角色集合的映射-->
+            <collection property="roles" ofType="com.mybatisduoToduo.domain.Role">
+                <id property="id" column="id"/>
+                <result property="roleName" column="roleName"></result>
+                <result property="roleDesc" column="roleDesc"></result>
+            </collection>
+        </resultMap>
+
+        <!-- 查询一个用户具备多个角色-->
+        <select id="findAllUser" resultMap="UserMap" >
+        SELECT * FROM `user` u left JOIN users_role us on  u.id = us.userId  LEFT JOIN role r on r.id = us.roleId;
+    </select>
+
+
+</mapper>
