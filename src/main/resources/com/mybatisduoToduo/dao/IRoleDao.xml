@@ -30,7 +30,7 @@
     <!-- 多对多 查询所有角色对应的用户信息-->
     <select id="findAllRole" resultMap="roleResultMap">
 
-        SELECT * FROM role r right JOIN users_role u on r.id = u.roleId
+        SELECT * FROM role r LEFT JOIN users_role u on r.id = u.roleId
         LEFT  JOIN `user` us on us.id = u.userId;
     </select>
 

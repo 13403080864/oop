@@ -1,8 +1,8 @@
-package com.mabytisduoToduoTest.dao;
+package com.mabatisduoToduoTest.dao;
+
 
 import com.mybatisduoToduo.dao.IRoleDao;
-import com.mybatisduoToduo.dao.IUserDao;
-import com.mybatisduoToduo.domain.User;
+import com.mybatisduoToduo.dao.Role;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -16,16 +16,14 @@ import java.io.InputStream;
 import java.util.List;
 
 /**
- * @author
- * @since 2021-10-31 下午3:24
+ * @author wq
+ * @since 2021-10-29 17:02
  */
 
-//多对多，一个用户对应多个角色
-public class UserTest {
-
+public class MabytisduoToduoTest {
     private InputStream in;
     private SqlSession sqlSession;
-    private IUserDao userDaoDao;
+    private IRoleDao roleDao;
 
     @Before
     public void init() throws IOException {
@@ -41,7 +39,7 @@ public class UserTest {
         sqlSession = factory.openSession(true);
 
         //4,获取dao的代理对象
-        userDaoDao = sqlSession.getMapper(IUserDao.class);
+        roleDao = sqlSession.getMapper(IRoleDao.class);
 
     }
 
@@ -57,16 +55,11 @@ public class UserTest {
     }
 
     @Test
-    public void testFindAllUser(){
-
-        List<User> users = userDaoDao.findAllUser();
-
-        for(User user : users){
-
-            System.out.println(user);
-
-            System.out.println(user.getRoles());
-
+    public void findAllRole(){
+        List<com.mybatisduoToduo.domain.Role> roles = roleDao.findAllRole();
+        for(com.mybatisduoToduo.domain.Role role : roles){
+            System.out.println(role );
+            System.out.println(role.getUsers() + "\n");
         }
     }
 }

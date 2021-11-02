@@ -1,8 +1,7 @@
-package com.mabytisduoToduoTest.dao;
+package com.mybatis_duobiaoTest.dao;
 
-import com.mybatisduoToduo.dao.IRoleDao;
-import com.mybatisduoToduo.domain.Role;
-import com.mybatisduoToduo.domain.User;
+import com.mybatisduobiao.dao.IAccountDao;
+import com.mybatisduobiao.domain.Account;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -17,18 +16,18 @@ import java.util.List;
 
 /**
  * @author wq
- * @since 2021-10-29 17:02
+ * @since 2021-10-28 19:05
  */
 
-public class MabytisduoToduo {
+public class MybatisDuobiaoTest1 {
     private InputStream in;
     private SqlSession sqlSession;
-    private IRoleDao roleDao;
+    private IAccountDao accountDao;
 
     @Before
     public void init() throws IOException {
         //1,读取配置文件
-        in = Resources.getResourceAsStream("SqlDuoToDuo.xml");
+        in = Resources.getResourceAsStream("SqlDuobiao.xml");
 
         //2,获取SqlSessionFactory
         SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
@@ -39,7 +38,7 @@ public class MabytisduoToduo {
         sqlSession = factory.openSession(true);
 
         //4,获取dao的代理对象
-        roleDao = sqlSession.getMapper(IRoleDao.class);
+        accountDao = sqlSession.getMapper(IAccountDao.class);
 
     }
 
@@ -54,23 +53,29 @@ public class MabytisduoToduo {
 
     }
 
+    /**
+     * testFindAll()
+     *     单表操作，查询所有账户信息
+     */
     @Test
     public void testFindAll(){
-        List<Role> roles = roleDao.findAll();
-        for(Role role : roles){
-            System.out.println(role);
+        List<Account> accounts = accountDao.findAll();
+        for (Account account : accounts){
+            System.out.println(account);
+            System.out.println(account.getUser());
         }
     }
 
-
-    //多对多 查询角色对应的用户信息
+    /**
+     * testFindAllAccount()
+     *     多表操作，查询所有账户信息，同事包含用户的姓名和地址的信息
+     */
     @Test
-    public void testFindAllRole(){
-        List<Role> roles = roleDao.findAllRole();
-        for(Role role : roles){
-            System.out.println(role );
-            System.out.println(role.getUsers());
+    public void testFindAllAccount(){
+        List<Account> us = accountDao.findAllAccount();
+        for(Account u : us){
+            System.out.println(u);
+            System.out.println(u.getUser());
         }
     }
-
 }

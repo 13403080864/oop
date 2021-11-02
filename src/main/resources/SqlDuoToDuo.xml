@@ -17,13 +17,13 @@
             <!-- 配置数据库（连接池）-->
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/wqtest?characterEncoding=UTF-8"/>
+<!--                <property name="url" value="jdbc:mysql://localhost:3306/wqtest?characterEncoding=UTF-8"/>-->
 
-                <!-- <property name="url" value="jdbc:mysql://192.168.9.244:3306/wqtest?characterEncoding=UTF-8"/>-->
+                 <property name="url" value="jdbc:mysql://192.168.9.244:3306/wqtest?characterEncoding=UTF-8"/>
                 <property name="username" value="root"/>
-                <property name="password" value="123456"/>
+<!--                <property name="password" value="123456"/>-->
 
-    <!--<property name="password" value="hellowin"/>-->
+    <property name="password" value="hellowin"/>
 </dataSource>
 </environment>
 </environments>
@@ -32,6 +32,6 @@
     <mappers>
         <!-- mybatisduoToduo的配置映射文件的位置-->
         <mapper resource="com/mybatisduoToduo/dao/IRoleDao.xml"/>
-        <mapper resource="com/mybatisduoToduo/dao/IUserDao.xml"/>
+        <!--<mapper resource="com/mybatisduoToduo/dao/IUserDao.xml"/>-->
     </mappers>
 </configuration>
