@@ -14,11 +14,13 @@ import java.sql.Statement;
 //useUnicode=true&characterEncoding=UTF-8    useSSL=false
 public class Jdbc_mysql {
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://192.168.9.244:3306/wqtest?useUnicode=true&characterEncoding=UTF-8";
+    //static final String DB_URL = "jdbc:mysql://192.168.9.244:3306/wqtest?useUnicode=true&characterEncoding=UTF-8";
+    static final String DB_URL = "jdbc:mysql://localhost:3306/wqtest?useUnicode=true&characterEncoding=UTF-8";
 
     // 数据库的用户名与密码，需要根据自己的设置
     static final String USER = "root";
-    static final String PASS = "hellowin";
+    //static final String PASS = "hellowin";
+    static final String PASS = "123456";
 
     public static void main(String[] args) throws Exception {
 
@@ -36,7 +38,7 @@ public class Jdbc_mysql {
         while(resultSet.next()){
             System.out.println(resultSet.getString("id")+"\t "
                     +resultSet.getString("username")+"\t "
-                    +resultSet.getString("birthday")+" "
+                    +resultSet.getString("birthday")+"\t "
                     +resultSet.getString("address")+" "
             );
         }
