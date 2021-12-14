@@ -44,8 +44,8 @@ public class DemoBufferedWriter {
             bw.write("学习最重要");
             //换行下
             bw.newLine();
-        }
 
+        }
         bw.close();
 
     }

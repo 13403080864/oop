@@ -1,5 +1,4 @@
 package com;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -22,12 +21,14 @@ public class Insert {
     }
 
     public static void insert() throws Exception {
+        RandomName randomName = new RandomName();
         Connection conn = null;
         Statement sta = null;
         Class.forName(driver);
         conn = DriverManager.getConnection(url, username, password);
         sta = conn.createStatement();
         //添加批处理
+        //sta.addBatch("insert into user(username,birthday,sex,address) values('小明','1990-10-10','女','浙江省杭州是滨江区')");
         sta.addBatch("insert into user(username,birthday,sex,address) values('小明','1990-10-10','女','浙江省杭州是滨江区')");
 
         //执行批处理

@@ -1,7 +1,6 @@
 package com.io;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -17,7 +16,7 @@ public class DemoBufferedReader {
     public static void main(String[] args) throws IOException {
 
         //BufferedReader br = new BufferedReader(new FileReader("c.txt"));
-        BufferedReader b1= new BufferedReader(new FileReader("/Users/daixiongxing/Desktop/1.txt"));
+        BufferedReader b1= new BufferedReader(new FileReader("a.txt"));
 
         //read 方法
 //        char[] ch = new char[1024];
