@@ -12,24 +12,27 @@ import java.sql.Statement;
  */
 
 public class Insert {
-    private static String url = "jdbc:mysql://localhost:3306/wqtest?useUnicode=true&characterEncoding=UTF-8";
-    //private static  String url = "jdbc:mysql://192.168.9.244:3306/wqtest?useUnicode=true&characterEncoding=UTF-8";
+    //private static String url = "jdbc:mysql://localhost:3306/wqtest?useUnicode=true&characterEncoding=UTF-8";
+    private static  String url = "jdbc:mysql://192.168.9.244:3306/wqtest?useUnicode=true&characterEncoding=UTF-8";
     private static String driver = "com.mysql.jdbc.Driver";
     private static String username = "root";
-    //private static String password = "hellowin";
-    private static String password = "123456";
+    private static String password = "hellowin";
+    //private static String password = "123456";
 
     public static void main(String[] args) throws Exception {
         IdCardGenerator idCardGenerator=new IdCardGenerator();
+        RandomName randomName = new RandomName();
         //query();
+        //insert方法
         for(int i=0;i<3;i++){
             String temp="insert into user(username,birthday,sex,address) values('"+RandomName.getChineseName()+"','1990-10-10','女','"+idCardGenerator.generate()+"')";
             insert(temp);
+            System.out.println(temp);
         }
+
     }
 
     public static void insert(String sql) throws Exception {
-        //RandomName randomName = new RandomName();
         Connection conn = null;
         Statement sta = null;
         Class.forName(driver);
@@ -37,7 +40,9 @@ public class Insert {
         sta = conn.createStatement();
         //添加批处理
 //        sta.addBatch("insert into user(username,birthday,sex,address) values('小明','1990-10-10','女','浙江省杭州是滨江区')");
+
         sta.addBatch(sql);
+
 
         //执行批处理
         sta.executeBatch();
