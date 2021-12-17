@@ -26,7 +26,7 @@ public class JDBCDemo2 {
 
         // 可以帮助读取和处理资源文件中的信息
         Properties pros = new Properties();
-        InputStream stream = JDBCDemo2.class.getClassLoader().getResourceAsStream("F:\\project\\oop\\src\\main\\resources\\db.properties");
+        InputStream stream = JDBCDemo2.class.getClassLoader().getResourceAsStream("/Users/daixiongxing/D/hlwproject/oop/src/main/resources/db.properties");
         pros.load(stream);
         // 加载驱动
             Class.forName(pros.getProperty("driver"));
