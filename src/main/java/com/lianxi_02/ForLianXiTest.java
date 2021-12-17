@@ -19,4 +19,10 @@ public class ForLianXiTest {
         ForLianXi li = new ForLianXi();
         li.test4(800,1,5,9);
     }
+
+    @Test
+    public void test5(){
+        ForLianXi li = new ForLianXi();
+        li.test5();
+    }
 }
