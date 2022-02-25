@@ -12,6 +12,8 @@ import java.util.Arrays;
 public class ArrayBinarySearch {
     public static void main(String[] args) {
         char[] arr = {'a','b','c','d','r'};
+
+
         arrayBinarySearch(arr,'d');  //3
     }
     public static void arrayBinarySearch(char[] arr,char key){
