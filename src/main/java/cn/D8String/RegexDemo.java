@@ -28,5 +28,14 @@ public class RegexDemo {
         System.out.println(matches); //true
         System.out.println(matches2); //false
 
+        System.out.println("========");
+
+        //根据数字分割,多个一起的按一起切
+        String str = "ahffj234fhjj5jj5j0";
+        String[] split = str.split("[0-9]+");
+        for (int i = 0; i < split.length; i++) {
+            System.out.println(split[i]);
+        }
+
     }
 }
