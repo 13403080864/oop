@@ -2,8 +2,6 @@ package com.mabatisduoToduoTest.dao;
 
 
 import com.mybatisduoToduo.dao.IRoleDao;
-import com.mybatisduoToduo.dao.Role;
-import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -28,7 +26,7 @@ public class MabytisduoToduoTest {
     @Before
     public void init() throws IOException {
         //1,读取配置文件
-        in = Resources.getResourceAsStream("SqlDuoToDuo.xml");
+  //      in = Resources.getResourceAsStream("SqlDuoToDuo.xml");
 
         //2,获取SqlSessionFactory
         SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();

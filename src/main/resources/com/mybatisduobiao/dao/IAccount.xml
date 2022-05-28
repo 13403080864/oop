@@ -23,7 +23,7 @@
     </resultMap>
     <!-- 查询所有账户-->
     <select id="findAll" resultMap="accountUserMap">
-    <!-- select * from account-->
+<!--     select * from account-->
         <!-- SELECT u.*,a.id aid,a.uid,a.money FROM account a LEFT JOIN `user` u on a.UID = u.id-->
         SELECT u.*,a.id aid,a.uid,a.money FROM account a,user u where a.uid = u.id
  </select>

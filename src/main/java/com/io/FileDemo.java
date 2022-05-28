@@ -22,9 +22,14 @@ public class FileDemo {
         File file = new File("in.txt");
         File file1 = new File("out.txt");
 
+
+        //绝对路径创建文件
+        File file2 = new File("d:\\abcd");
+        System.out.println(file2);
+
         boolean newFile = file1.createNewFile();
         //创建文件夹mkdir（创建一个文件夹） mkdirs(创建多个文件夹)
-        File f = new File("cc\\dd");
+        File f = new File("cc\\ddcccc");
         boolean mkdir = f.mkdirs();
         System.out.println(newFile);
         System.out.println(mkdir);
