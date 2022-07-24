@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<suite name="测试">-->
+<!--    <test name="第一个测试的">-->
+<!--        <groups>-->
+<!--            <define name="group1">-->
+<!--                <include name="num"/>-->
+<!--                <include name="num1"/>-->
+<!--            </define>-->
+<!--            <define name="group2">-->
+<!--                <include name="num1"/>-->
+<!--            </define>-->
+<!--            <run>-->
+<!--                <include name="num1"/>-->
+<!--            </run>-->
+<!--        </groups>-->
+<!--        <classes>-->
+<!--            <class name="com.day11TestNG.LoginTest"/>-->
+<!--            <class name="com.day11TestNG.RegisterTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--</suite>-->
+
+
+<suite name="测试">
+    <test name="第一个测试的">
+        <groups>
+            <define name="defineGroup">
+                <include name="group"/>
+            </define>
+            <run>
+                <include name="defineGroup"/>
+            </run>
+        </groups>
+        <classes>
+        <class name="com.day11TestNG.LoginTest"/>
+        <class name="com.day11TestNG.RegisterTest"/>
+    </classes>
+    </test>
+
+</suite>

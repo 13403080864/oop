@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--公司写的-->
+<!--<suite name="测试">-->
+<!--<test name="注册模块">-->
+<!--    <groups>-->
+<!--        <define name="defineGroup">-->
+<!--            <include name="group"/>-->
+<!--        </define>-->
+<!--        <run>-->
+<!--            <include name="defineGroup"/>-->
+<!--        </run>-->
+<!--    </groups>-->
+<!--    <classes>-->
+<!--        <class name="com.day11TestNG.LoginTest"/>-->
+<!--        <class name="com.day11TestNG.RegisterTest"/>-->
+<!--    </classes>-->
+<!--</test>-->
+
+<!--</suite>-->
+
+
+<suite name="测试">
+<test name="登录模块">
+    <classes>
+        <class name="com.day11TestNG.c.LoginTest"/>
+    </classes>
+</test>
+
+    <test name="注册模块">
+        <classes>
+            <class name="com.day11TestNG.c.RegisterTest"/>
+        </classes>
+    </test>
+
+</suite>

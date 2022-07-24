@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 套件名字，自己取名字-->
+<suite name="test">
+    <!-- test测试的名字，可根基方法来命名，自己取名-->
+    <test name="login">
+        <classes>
+            <!-- class名字，是类的全限定类名-->
+            <class name="testng.suite.SuiteConfig"/>
+            <class name="testng.suite.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="pay">
+        <classes>
+            <class name="testng.suite.SuiteConfig"/>
+            <class name="testng.suite.PayTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -7,15 +7,7 @@ package com;
 
 public class RandomPhoneNum {
     public static void main(String[] args) {
-//        for (int i = 0; i < 10; i++) {
-//            Random r = new Random();
-//            String num = "189";
-//
-//            for (int j = 0; j < 8; j++) {
-//                num +=r.nextInt(9);
-//            }
-//            System.out.println(num);
-//        }
+        getPhoneNum();
 
     }
 
@@ -32,7 +24,7 @@ public class RandomPhoneNum {
             //随机出真实号段  使用数组的length属性，获得数组长度，
             //通过Math.random（）*数组长度获得数组下标，从而随机出前三位的号段
 
-
+            //Math.random() * start.length随机获取数组中的一个数
             String phoneFirstNum = start[(int) (Math.random() * start.length)];
             //随机出剩下的8位数
             String phoneLastNum = "";
